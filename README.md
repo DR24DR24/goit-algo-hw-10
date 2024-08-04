@@ -12,7 +12,7 @@ $$
 f(x) = \sin\left(\frac{1}{x}\right)
 $$
 
-Integration range: from \(10^{-5}\) to 2.
+Integration range: from $\(10^{-5}\)$ to 2.
 
 ## Results of Numerical Experiments
 
