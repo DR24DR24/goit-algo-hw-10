@@ -11,8 +11,15 @@ sugar=pulp.LpVariable("sugar",lowBound=0,upBound=50,cat="Continuous")
 fruitPuree=pulp.LpVariable("fruitPuree",lowBound=0,upBound=40,cat="Continuous")
 
 model+=lemonade+fruitJuice, "Problem"
-model+=sugar+lemonJuice+2*water==lemonade , "Constraint1"
-model+=2*fruitPuree+water==fruitJuice , "Constraint2"
+
+
+model+=water==lemonade*2+fruitJuice , "Constraint3"
+model+=lemonJuice==lemonade , "Constraint4"
+model+=sugar==lemonade , "Constraint5"
+model+=fruitPuree==fruitJuice*2 , "Constraint6"
+
+
+
 
 model.solve()
 print(f"lemonade: {lemonade.varValue} fruitJuice: {fruitJuice.varValue}")
